@@ -51,23 +51,27 @@ function App() {
   const sectionRefs = useRef([]);
 
     useEffect(() => {
+    document.body.style.backgroundColor = projects[0].bg;
+    document.body.style.transition = "background 1s ease";
+
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
+
       sectionRefs.current.forEach((ref, i) => {
         if (!ref) return;
+
         const rect = ref.getBoundingClientRect();
         const offsetTop = rect.top;
+
         if (offsetTop <= windowHeight * 0.4 && offsetTop >= -windowHeight * 0.4) {
           document.body.style.backgroundColor = projects[i].bg;
         }
       });
     };
 
-    handleScroll(); 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
 
 
   return (
