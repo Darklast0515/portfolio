@@ -1,0 +1,82 @@
+.intro-box {
+  border: 2px solid #555;
+  border-radius: 12px;
+  padding: 30px 25px;
+  margin-bottom: 60px;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Header */
+header h1,h2 {
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  font-family: "Courier New", monospace;
+}
+
+.intro-icons a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+  color: #0a66c2; 
+}
+
+body {
+  background-color: #2c3e50; /* your main background */
+  background-image: 
+    radial-gradient(#ffffff20 4px, transparent 4px),
+    radial-gradient(#ffffff20 4px, transparent 4px);
+  background-size: 50px 50px; /* distance between dots */
+  background-position: 0 0, 20px 20px; /* stagger the dots */
+}
+
+
+/* Project rows */
+.project-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 40px;
+}
+
+.project-img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.project-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.project-box {
+  border: 2px solid #555;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 60px;
+  background: rgba(0,0,0,0.25);
+}
+
+
+.project-container{
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-img {
+    height: 250px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+.footer-logos svg {
+  transition: transform 0.3s ease;
+}
+
+.footer-logos svg:hover {
+  transform: scale(1.2);
+}
+
