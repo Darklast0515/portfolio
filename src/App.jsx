@@ -12,31 +12,38 @@ const projects = [
     title: "Court Booking Management System",
     bg:"#2c3e50",
     desc: "A full-stack court reservation system developed individually during my university studies. It allows users to book courts, manage reservations, and check real-time availability.\nThe system also includes secure user authentication, email verification, and a user-friendly dashboard.",
-    images: ["/court1.png", "/court2.png","/court3.png","/court4.png"],
+    images: [import.meta.env.BASE_URL + "court1.png",
+  import.meta.env.BASE_URL + "court2.png",
+   import.meta.env.BASE_URL + "court3.png",
+      import.meta.env.BASE_URL + "court4.png"
+    ],
   },
   {
     title: "CRM Mobile-based Software System",
     bg:"#1f2d3a",
     desc: "A final year project where I contribute and coordinated the development based on a real client's requirements. The CRM system helps a fertilizer company manage large-scale customer and sales data.\nFeatures include data creation and management, sales trend visualization, forecasting and database import.\n(Some screenshots are censored due to client data privacy.)",
-    images: ["/crm1.png","/crm2.png"],
+    images: [  import.meta.env.BASE_URL + "crm1.png",
+      import.meta.env.BASE_URL + "crm2.png"],
   },
   {
     title: "IoT Project - Individual",
     bg:"#2d2d2d",
     desc: "An individual IoT system built from scratch to automatically control a fan based on temperature readings.Sensor data is stored locally and displayed through a Raspberry Pi virtual machine. When the temperature exceeds the threshold, the fan activates automatically.\nComponents: Arduino Uno, Raspberry Pi VM, DHT11, L298N, DC motor, LCD I2C, potentiometer.",
-    images: ["/iot_indi.jpg","/iot_indi2.jpg"],
+    images: [import.meta.env.BASE_URL + "iot_indi.jpg",
+      import.meta.env.BASE_URL + "iot_indi2.jpg"],
   },
   {
     title: "IoT Project - Group",
      bg:"#111827",
     desc: "As the team leader, I guided the development of a fully functional smart home prototype. Each section of the house reacts automatically based on sensor inputs and user actions.\nAll collected data is stored in PostgreSQL and displayed on ThingsBoard via MQTT. Users can also remotely control sensors and devices using RPC commands.",
-    images: ["/iot_grp.jpg","/iot_grp2.jpg"],
+    images: [ import.meta.env.BASE_URL + "iot_grp.jpg",
+      import.meta.env.BASE_URL + "iot_grp2.jpg"],
   },
    {
     title: "Anime Finder - Custom",
      bg:"#1a1a1a",
     desc: "Developed a custom application with API connecting to capable of retrieving anime titles and related information from pasted images.\nThis implementation was designed to experiment with API integration and functionality.",
-    images: ["/anime_find.png"],
+    images: [import.meta.env.BASE_URL + "anime_find.png"],
   }
 ];
 
@@ -44,27 +51,23 @@ function App() {
   const sectionRefs = useRef([]);
 
     useEffect(() => {
-    document.body.style.backgroundColor = projects[0].bg;
-    document.body.style.transition = "background 1s ease";
-
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
-
       sectionRefs.current.forEach((ref, i) => {
         if (!ref) return;
-
         const rect = ref.getBoundingClientRect();
         const offsetTop = rect.top;
-
         if (offsetTop <= windowHeight * 0.4 && offsetTop >= -windowHeight * 0.4) {
           document.body.style.backgroundColor = projects[i].bg;
         }
       });
     };
 
+    handleScroll(); 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
 
 
   return (
