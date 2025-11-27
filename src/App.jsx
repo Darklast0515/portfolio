@@ -4,7 +4,6 @@ import { Container, Row, Col, Carousel } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 import { FaReact } from "react-icons/fa"; 
 import { SiVite } from "react-icons/si"; 
-import Particles from "react-tsparticles";
 
 
 
